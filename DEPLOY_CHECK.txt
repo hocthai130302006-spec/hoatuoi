@@ -1,0 +1,6 @@
+BLOOMISTRY FINAL DEPLOY CHECK
+Upload the entire package contents.
+Keep index.html and assets/ at repository root.
+Do not rename assets/ or image files.
+Navigation: Trang chủ | Dịch vụ | Bán hàng | Về chúng tôi | Đặt hàng.
+GitHub Pages path: /hoatuoi/

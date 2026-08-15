@@ -1,14 +1,16 @@
 # Bloomistry
 
-Website tĩnh sẵn sàng triển khai trên GitHub Pages.
+Website tĩnh sẵn sàng cho GitHub Pages.
 
-## Cấu trúc
-- `index.html` — trang chủ
-- `dichvu.html` — dịch vụ
-- `gioithieu.html` — về chúng tôi
-- `dathang.html` — đặt hàng
-- `style.css` — giao diện
-- `script.js` — tương tác
-- `assets/` — hình ảnh/logo
+## Trang
+- `index.html` — Trang chủ
+- `dichvu.html` — Dịch vụ
+- `banhang.html` — Bán hàng / sản phẩm
+- `gioithieu.html` — Về chúng tôi
+- `dathang.html` — Đặt hàng
+- `style.css` — Giao diện
+- `script.js` — Tương tác
+- `assets/` — Logo và ảnh sản phẩm
 
-> Các file ảnh gốc chưa có trong file HTML được cung cấp, nên thư mục `assets/` hiện dùng ảnh SVG tạm để website không bị lỗi đường dẫn. Có thể thay bằng ảnh thật nhưng giữ nguyên tên file tương ứng.
+## Lưu ý
+Upload **toàn bộ** file và thư mục `assets/` lên repository, với `index.html` ở thư mục gốc.

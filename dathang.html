@@ -1,5 +1,90 @@
-<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Bloomistry – Hoa và quà tặng."><title>Đặt hàng | Bloomistry</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><div class="container nav"><a class="logo" href="index.html"><img src="assets/logo.png?v=20260815" alt="Bloomistry"></a><button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">☰</button><ul class="nav-links"><li><a class=" " href="index.html">Trang chủ</a></li><li><a class=" " href="dichvu.html">Dịch vụ</a></li><li><a class=" " href="gioithieu.html">Về chúng tôi</a></li><li><a class="active nav-cta" href="dathang.html">Đặt hàng</a></li></ul></div></header>
-<main><section class="section"><div class="container"><div class="section-head"><div class="eyebrow">Bloomistry</div><h1>Bắt đầu đặt hoa</h1><p>Hãy liên hệ Bloomistry để được tư vấn mẫu hoa, ngân sách và thời gian giao phù hợp.</p></div></div></section></main>
-<footer class="footer"><div class="container"><div class="footer-grid"><div><h3>Bloomistry</h3><p>Danh thức vẻ đẹp riêng – nơi mỗi bó hoa được chăm chút để trở thành một lời nhắn yêu thương.</p></div><div><h3>Liên hệ</h3><div class="footer-links"><a href="tel:0900123456">SĐT: 0900 123 456</a><a href="https://zalo.me/" target="_blank" rel="noopener">Zalo: Bloomistry</a><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook: Bloomistry</a></div></div><div><h3>Địa chỉ</h3><p>Khu Dân Cư Thuận Giao,<br>Bình Dương, Việt Nam</p></div></div><div class="footer-bottom">© 2026 Bloomistry. All rights reserved.</div></div></footer>
-<script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Đặt hàng | Bloomistry – Hoa tươi và quà tặng">
+<title>Đặt hàng | Bloomistry</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Bloomistry">
+      <img src="assets/logo.png" alt="Bloomistry">
+    </a>
+    <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+    <ul class="nav-links"><li><a class=" " href="index.html">Trang chủ</a></li><li><a class=" " href="dichvu.html">Dịch vụ</a></li><li><a class=" " href="banhang.html">Bán hàng</a></li><li><a class=" " href="gioithieu.html">Về chúng tôi</a></li><li><a class="active nav-cta" href="dathang.html">Đặt hàng</a></li></ul>
+  </div>
+</header>
+<main>
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Đặt hàng</div>
+      <h1>Gửi yêu cầu đặt hoa</h1>
+      <p>Điền thông tin bên dưới. Bloomistry sẽ liên hệ để xác nhận mẫu, ngân sách và thời gian giao.</p>
+    </div>
+    <div class="order-box">
+      <form id="order-form">
+        <div class="form-grid">
+          <label>Họ và tên<input id="name" required placeholder="Nguyễn Văn A"></label>
+          <label>Số điện thoại<input id="phone" required type="tel" placeholder="0900 123 456"></label>
+          <label>Sản phẩm
+            <select id="product">
+              <option>Hoa tươi nghệ thuật</option>
+              <option>Hoa trái cây</option>
+              <option>Box hoa & bánh</option>
+            </select>
+          </label>
+          <label>Ngân sách dự kiến<input id="budget" placeholder="Ví dụ: 500.000đ"></label>
+          <label class="full">Thời gian / ngày giao<input id="date" type="text" placeholder="Ví dụ: 20/08/2026 - 18:00"></label>
+          <label class="full">Địa chỉ giao hàng<textarea id="address" rows="3" required placeholder="Nhập địa chỉ nhận hoa"></textarea></label>
+          <label class="full">Lời nhắn<textarea id="note" rows="3" placeholder="Màu hoa, lời chúc hoặc yêu cầu riêng..."></textarea></label>
+        </div>
+        <button class="btn btn-primary" type="submit">Gửi yêu cầu đặt hàng →</button>
+        <p class="order-note">Sau khi gửi, hệ thống sẽ mở ứng dụng email để bạn gửi yêu cầu cho Bloomistry.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(location.search);
+  const product = params.get("sanpham");
+  if (product) document.getElementById("product").value = product;
+  document.getElementById("order-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const get = id => document.getElementById(id).value.trim();
+    const body = [
+      "YÊU CẦU ĐẶT HÀNG BLOOMISTRY",
+      "Họ tên: " + get("name"),
+      "SĐT: " + get("phone"),
+      "Sản phẩm: " + get("product"),
+      "Ngân sách: " + get("budget"),
+      "Thời gian giao: " + get("date"),
+      "Địa chỉ: " + get("address"),
+      "Lời nhắn: " + get("note")
+    ].join("\n");
+    location.href = "mailto:bloomistry@example.com?subject=Yêu cầu đặt hàng Bloomistry&body=" + encodeURIComponent(body);
+  });
+});
+</script>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h3>Bloomistry</h3><p>Danh thức vẻ đẹp riêng – nơi mỗi bó hoa được chăm chút để trở thành một lời nhắn yêu thương.</p></div>
+      <div><h3>Liên hệ</h3><div class="footer-links">
+        <a href="tel:0900123456">SĐT: 0900 123 456</a>
+        <a href="https://zalo.me/" target="_blank" rel="noopener">Zalo: Bloomistry</a>
+        <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook: Bloomistry</a>
+      </div></div>
+      <div><h3>Địa chỉ</h3><p>Khu Dân Cư Thuận Giao,<br>Bình Dương, Việt Nam</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 Bloomistry. All rights reserved.</div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

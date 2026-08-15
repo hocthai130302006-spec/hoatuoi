@@ -1,0 +1,1 @@
+UPLOAD TO GITHUB: upload ALL files and the entire assets folder. Do not upload only index.html. After uploading, wait for GitHub Pages to redeploy. The image URLs include a cache-busting query (?v=20260815).

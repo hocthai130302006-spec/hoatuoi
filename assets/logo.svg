@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f8ead9"/><stop offset="1" stop-color="#e9c9aa"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#g)"/><circle cx="400" cy="285" r="125" fill="#fff8ef" opacity=".8"/>
+<text x="400" y="300" text-anchor="middle" font-family="Arial" font-size="42" fill="#8a5a28">Bloomistry</text>
+</svg>
